@@ -1,5 +1,6 @@
 elastic-query-service:
   version: v1
+  custom-audience: elastic-query-service
 
 server:
   port: 8183
@@ -8,6 +9,14 @@ server:
 
 elastic-query-config:
   text-field: text
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9091/auth/realms/microservices-realm
+          jwk-set-uri: http://localhost:9091/auth/realms/microservices-realm/protocol/openid-connect/certs
 
 elastic-config:
   index-name: twitter-index
