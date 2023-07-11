@@ -14,12 +14,10 @@ elastic-query-web-client:
     base-url: 'http://elastic-query-service/elastic-query-service/documents'
     service-id: elastic-query-service
     instances:
-      -
-        id: elastic-query-service-1
+      - id: elastic-query-service-1
         host: localhost
         port: 8183
-      -
-        id: elastic-query-service-2
+      - id: elastic-query-service-2
         host: localhost
         port: 8185
   query-by-text:
@@ -30,6 +28,23 @@ elastic-query-web-client:
 spring:
   thymeleaf:
     cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: 'elastic-query-web-client'
+            client-secret: '{cipher}f5187f55a57942562bec4f0d11ba49eb08cfdd4539548a53cbac6d674ba85901dd0c64dc1d33ee7d1e230e716cac2acd49b3a27bea00684e91a700d071186823'
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope: openid
+        provider:
+          keycloak:
+            issuerUri: http://localhost:8081/auth/realms/microservices-realm
+
+security:
+  logout-success-url: http://localhost:8184/elastic-query-web-client
+  default-client-registration-id: keycloak
 
 user-config:
   username: test
