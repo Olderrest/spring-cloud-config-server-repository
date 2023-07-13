@@ -26,8 +26,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
-    username: keycloak
-    password: '{cipher}aef10210eb3fbd27c7817972d47aa971db35a97b7ea3602c9e67d235a10eabd0'
+    username: postgres
+    password: '{cipher}ab617b405cf2e0a6ced17b4eb17d58ce8e61909d38ac7998981a71dda67d9131'
     driver-class-name: org.postgresql.Driver
     platform: postgres
     schema: classpath:init-schema.sql
