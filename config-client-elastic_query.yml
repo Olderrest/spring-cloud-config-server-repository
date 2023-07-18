@@ -46,7 +46,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL9Dialect
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
+    url: jdbc:postgresql://172.18.0.3:5432/postgres?currentSchema=public&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres
     password: '{cipher}ab617b405cf2e0a6ced17b4eb17d58ce8e61909d38ac7998981a71dda67d9131'
     driver-class-name: org.postgresql.Driver
